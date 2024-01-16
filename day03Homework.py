@@ -6,22 +6,12 @@ while True:
     sel = '12345q'
     if Options in sel:
         if Options == '1':
-            Fahrenheit = input("Enter the Fahrenheit. : ")
-            while type(Fahrenheit) != float:
-                print("Please enter only number.")
-                break
-            else:
-                float(Fahrenheit)
-                print(f"{Fahrenheit}F is {(Fahrenheit - 32) * 5 / 9:.4f}C")
+            Fahrenheit = float(input("Enter the Fahrenheit. : "))
+            print(f"{Fahrenheit}F is {(Fahrenheit - 32) * 5 / 9:.4f}C")
 
         elif Options == '2':
-            Celsius = input("Enter the Celsius. :")
-            while type(Celsius) != float:
-                print("Please enter only number.")
-                break
-            else:
-                float(Celsius)
-                print(f"{Celsius}C is {(Celsius * 9.0 / 5.0) + 32:.4f}F")
+            Celsius = float(input("Enter the Celsius. : "))
+            print(f"{Celsius}C is {(Celsius * 9.0 / 5.0) + 32:.4f}F")
 
         elif Options == '3':
             num = int(input("Enter the number. : "))
