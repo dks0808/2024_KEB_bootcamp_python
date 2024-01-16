@@ -2,7 +2,8 @@
 import string
 
 while True:
-    Options = input("1) Fahrenheit to Celsius, 2) Celsius to Fahrenheit, 3) Prime Number scaner, 4) Scaner between two number 5) Quit : ")
+    Options = input("""1) Fahrenheit to Celsius, 2) Celsius to Fahrenheit, 
+    3) Prime Number scaner, 4) Scaner between two number 5) Quit : """)
     sel = '12345q'
     if Options in sel:
         if Options == '1':
@@ -55,3 +56,7 @@ while True:
             break
     else:
         print("Please Enter the number between '1~5' or key 'q' ")
+
+
+
+# 연습문제 6.2
