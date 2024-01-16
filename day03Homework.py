@@ -1,5 +1,5 @@
 #과제 1
-import string
+# 5 Options to operate
 
 while True:
     Options = input("""1) Fahrenheit to Celsius, 2) Celsius to Fahrenheit, 
@@ -56,7 +56,3 @@ while True:
             break
     else:
         print("Please Enter the number between '1~5' or key 'q' ")
-
-
-
-# 연습문제 6.2
