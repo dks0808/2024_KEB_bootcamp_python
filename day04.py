@@ -11,7 +11,7 @@ for number in range(n1, n2+1):
         pass
     else:
         i = 2
-        while i*i < number: # i^2을 해줌으로서 소수에 대한 성능 이슈 해결
+        while i*i <= number: # i^2을 해줌으로서 소수에 대한 성능 이슈 해결
             if number % i ==0:
                 is_prime = False
                 break
