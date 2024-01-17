@@ -48,11 +48,11 @@ while True:
                             is_prime = False
                             break
                     if is_prime:
-                        print(number, end=' ')
+                        print(number, end=' ') #줄 바꿈 대신에 white space
             print('') # 줄 바꿈 위해 들어감.
 
         elif Options == '5' or 'q':
             print("Goodbye Have a nice day ^~^")
             break
     else:
-        print("Please Enter the number between '1~5' or key 'q' ")
+        print("Invalid options! Please Enter the number between '1~5' or key 'q' ")
