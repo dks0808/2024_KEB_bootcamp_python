@@ -1,20 +1,24 @@
-sugang = dict(python='kim', cpp='kang', db='kang')
-# print(sugang)
-# sugang['datastructure']= 'kim'
-# print(sugang)
-# sugang['datastructure']='park'
-# print(sugang['db'])
-# print(sugang.get('python'))
-# print(sugang.get('opensource', 'not exist'))
-for subject, professor in sugang.items():
-    print(f"{subject}'s professor is {professor}")
+import random
 
-for k in sugang.keys(): #keys를 안써줘도 키가자동으로나옴 키는 디폴트값임
-    print(k)
-for k in sugang:  # keys를 안써줘도 키가자동으로나옴 키는 디폴트값임
-    print(k)
-for v in sugang.values():
-    print(v)
+drinks_foods = {"위스키":"초콜렛", "와인":"치즈", "소주":"삼겹살", "고량주":"양꼬치"}
+# drink = input(drinks_foods.keys())
 
-for v in sugang.items():# tuple 형태로 출력 packing
-    print(v)
+drinks_foods_keys =list(drinks_foods)
+
+
+while True:
+    random_drink = random.choice(drinks_foods_keys)  # random 함수의 값은 시퀀스 자료가 아니어도 됨
+    menu = input(f"다음 술중에 고르시오.\n 1) {drinks_foods_keys[0]}, 2){drinks_foods_keys[1]}, 3){drinks_foods_keys[2]},4){drinks_foods_keys[3]}, 5) 아무거나  6) Quit : ")
+    if menu == '1':
+        print(f'{drinks_foods_keys[0]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[0]]} 입니다.')
+    elif menu == '2':
+        print(f'{drinks_foods_keys[1]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[1]]} 입니다.')
+    elif menu == '3':
+        print(f'{drinks_foods_keys[2]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[2]]} 입니다.')
+    elif menu == '4':
+        print(f'{drinks_foods_keys[3]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[3]]} 입니다.')
+    elif menu == '5':
+        print(f'{random_drink}에 어울리는 안주는 {drinks_foods[random_drink]} 입니다.')
+    elif menu == '6' or 'q':
+        print(f'quit this program')
+        break
