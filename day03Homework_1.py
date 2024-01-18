@@ -1,5 +1,20 @@
 #과제 1
-# 5 Options to operate
+# 5 Options to operate prime with function
+def isprime(n) -> bool: # boolean type hint
+    """
+    매개변수로 넘겨 받은 수의 소수 여부를 불린 boolean 으로 return
+    :param n: 판정할 매개변수
+    :return: 소수면 True, 아니면 False
+    """
+    if n < 2:
+        return False
+    else:
+        i =2
+        while i*i <= n:
+            if n % i == 0:
+                return False
+            i += 1
+        return True
 
 while True:
     Options = input("""1) Fahrenheit to Celsius, 2) Celsius to Fahrenheit, 
@@ -15,19 +30,11 @@ while True:
 
     elif Options == '3':
         num = int(input("Enter the number. : "))
-        is_prime = True
-        if num < 2:
-            print(f"{num} is NOT prime number.")
+
+        if isprime(num):
+            print(f"{num} is prime number.")
         else:
-            for i in range(2,num):
-                if num % i == 0:
-                    is_prime = False
-                    break
-                    i += 1
-            if is_prime:
-                print(f"{num} is prime number.")
-            else:
-                print(f"{num} is NOT prime number.")
+            print(f"{num} is NOT prime number.")
 
     elif Options == '4':
         numbers = input("Enter the number1 & number2. : ").split()
@@ -37,17 +44,8 @@ while True:
             n1, n2 = n2, n1
 
         for number in range(n1, n2 + 1):
-            is_prime = True  # is_prime 을 반복 마다 True 로 주어야함.
-
-            if number < 2:
-                pass
-            else:
-                for i in range(2, number):
-                    if number % i == 0:
-                        is_prime = False
-                        break
-                if is_prime:
-                    print(number, end=' ') #줄 바꿈 대신에 white space
+            if isprime(number):
+                print(number, end=' ') #줄 바꿈 대신에 white space
         print('') # 줄 바꿈 위해 들어감.
 
     elif Options == '5' or 'q':
