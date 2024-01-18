@@ -37,11 +37,11 @@ while True:
             print(f"{num} is NOT prime number.")
 
     elif Options == '4':
-        numbers = input("Enter the number1 & number2. : ").split()
-        n1 = int(numbers[0])
-        n2 = int(numbers[1])
-        if n1 > n2:
-            n1, n2 = n2, n1
+        n1, n2 = map(int, input("Enter the number1 & number2. : ").split())
+        # numbers = input("Enter the number1 & number2. : ").split()
+        # n1 = int(numbers[0])
+        # n2 = int(numbers[1])
+        n1, n2 = min(n1, n2), max(n1,n2)
 
         for number in range(n1, n2 + 1):
             if isprime(number):
