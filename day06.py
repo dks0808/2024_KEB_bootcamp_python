@@ -1,30 +1,46 @@
-#mixin
-class Flymixin:
+class FlyingMixin:
     def fly(self):
-        return f"{self.name}이(가) 하늘을 난다."
+        return f"{self.__name}이(가) 하늘을 훨훨 날아갑니다~"
 
-class Swimmingmixin:
+class SwimmingMixin:
     def swim(self):
-        return f'{self.name}이(가) 헤엄을 칩니다.'
-class Poketmon:
-    def __init__(self,name):
-        self.name = name
+        return f"{self.__name}이(가) 수영을 합니다."
+
+class Pokemon:
+    def __init__(self, name):
+        self.__name = name
+
     def attack(self):
-        print('attack')
+        print("공격~")
 
-class Charizard(Poketmon,Flymixin):
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):
+        self.__name = new_name
+
+    #name = property(get_name, set_name)
+
+
+class Charizard(Pokemon, FlyingMixin):
     pass
 
-class Gyrados(Poketmon,Swimmingmixin):
+class Gyarados(Pokemon, SwimmingMixin):
     pass
 
-p1 = Charizard('리자몽')
-p2 = Gyrados('갸라도스')
+g1 = Gyarados("갸라도스")
+c1 = Charizard("리자몽")
 
-print(p1.fly())
-print(p2.swim())
-# 해당 코드는 다중 상속을 사용한 mixin
-#다중상속 쓸 때는 mro에 유의 하여한다.
-p1.attack()
-Charizard.attack(p1) # 원래 객체 뒤에 메소드를 사용하지만 클래스 직접 사용하려면 괄호에 객체를 넣어줘야함
+# print(g1.get_name())
+# g1.set_name("잉어킹")
+# print(g1.get_name())
 
+# property 3rd
+print(g1.name)
+#print(g1.__name)  # direct access X
+#g1._Pokemon__name = "잉어킹"
+g1.name = "잉어킹"
+#g1.__name = "잉어킹"
+print(g1._Pokemon__name)  # 사실 상 private 개념은 없는 걸로
