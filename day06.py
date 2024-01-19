@@ -9,6 +9,8 @@ class Swimmingmixin:
 class Poketmon:
     def __init__(self,name):
         self.name = name
+    def attack(self):
+        print('attack')
 
 class Charizard(Poketmon,Flymixin):
     pass
@@ -23,3 +25,6 @@ print(p1.fly())
 print(p2.swim())
 # 해당 코드는 다중 상속을 사용한 mixin
 #다중상속 쓸 때는 mro에 유의 하여한다.
+p1.attack()
+Charizard.attack(p1) # 원래 객체 뒤에 메소드를 사용하지만 클래스 직접 사용하려면 괄호에 객체를 넣어줘야함
+
