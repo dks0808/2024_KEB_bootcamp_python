@@ -1,37 +1,25 @@
+#mixin
+class Flymixin:
+    def fly(self):
+        return f"{self.name}이(가) 하늘을 난다."
+
+class Swimmingmixin:
+    def swim(self):
+        return f'{self.name}이(가) 헤엄을 칩니다.'
 class Poketmon:
     def __init__(self,name):
         self.name = name
 
-    def attack(self,target):
-        print(f'{self}이(가) {target.name}을(를) 공격!' )
-
-    pass
-class Pikachu(Poketmon): # 부모 클래스의 이름을 괄호에 입력 is-a 관계
-    def attack(self,target):
-        print(f'{self}이(가) {target.name}을(를) {self.type} 공격!' )
-
-    def __init__(self,name, type):
-        self.type = type
-        super().__init__(name)
-    def electronic_info(self):
-        print('일렉트로 공격을 합니다.')
-
+class Charizard(Poketmon,Flymixin):
     pass
 
-class Agumon(Poketmon):
-    def attack(self,target):
-        print(f'{self}이(가) {target.name}을(를) {self.type}공격!' )
-
-    def __init__(self,name, type):
-        self.type = type
-        super().__init__(name)
+class Gyrados(Poketmon,Swimmingmixin):
     pass
 
-p1 = Pikachu('피카츄', '전기')
-print(p1.name)
+p1 = Charizard('리자몽')
+p2 = Gyrados('갸라도스')
 
-a1 = Agumon('아구몬', '화염')
-print(a1.name)
-p1.attack(a1)
-
-
+print(p1.fly())
+print(p2.swim())
+# 해당 코드는 다중 상속을 사용한 mixin
+#다중상속 쓸 때는 mro에 유의 하여한다.
