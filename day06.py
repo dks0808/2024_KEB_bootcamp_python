@@ -1,18 +1,37 @@
-class Poketmon: #소괄호 사용해도 되고 안해도 됨. 사용하면 올드함.
-    def __init__(self, name): #self 는 defalt,자동으로 들어가는 매개 변수이다. init = initialize init은 각 개체마다 태어날 때마다 딱 한번만 돌아감
+class Poketmon:
+    def __init__(self,name):
         self.name = name
-        print(f"{name} 포켓몬 생성")
-    pass
-    def attck(self, target):
-        print(f"{self.name}이(가) {target.name}을 공격")
-# name 필드를 가지고 할당한다.
-# self 는 해당 기능을 실행하고 있는 주체인 객체를 가르킨다.
-charizard = Poketmon('리자몽')
-pikachu = Poketmon('피카츄')
-squirtle = Poketmon('꼬북이')
 
-charizard.attck(squirtle)
-print(pikachu.name)
-print(squirtle.name)
-print(charizard.name)
+    def attack(self,target):
+        print(f'{self}이(가) {target.name}을(를) 공격!' )
+
+    pass
+class Pikachu(Poketmon): # 부모 클래스의 이름을 괄호에 입력 is-a 관계
+    def attack(self,target):
+        print(f'{self}이(가) {target.name}을(를) {self.type} 공격!' )
+
+    def __init__(self,name, type):
+        self.type = type
+        super().__init__(name)
+    def electronic_info(self):
+        print('일렉트로 공격을 합니다.')
+
+    pass
+
+class Agumon(Poketmon):
+    def attack(self,target):
+        print(f'{self}이(가) {target.name}을(를) {self.type}공격!' )
+
+    def __init__(self,name, type):
+        self.type = type
+        super().__init__(name)
+    pass
+
+p1 = Pikachu('피카츄', '전기')
+print(p1.name)
+
+a1 = Agumon('아구몬', '화염')
+print(a1.name)
+p1.attack(a1)
+
 
