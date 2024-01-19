@@ -1,28 +1,18 @@
-import random
-
-class OopsException(Exception):
+class Poketmon: #소괄호 사용해도 되고 안해도 됨. 사용하면 올드함.
+    def __init__(self, name): #self 는 defalt,자동으로 들어가는 매개 변수이다. init = initialize init은 각 개체마다 태어날 때마다 딱 한번만 돌아감
+        self.name = name
+        print(f"{name} 포켓몬 생성")
     pass
+    def attck(self, target):
+        print(f"{self.name}이(가) {target.name}을 공격")
+# name 필드를 가지고 할당한다.
+# self 는 해당 기능을 실행하고 있는 주체인 객체를 가르킨다.
+charizard = Poketmon('리자몽')
+pikachu = Poketmon('피카츄')
+squirtle = Poketmon('꼬북이')
 
+charizard.attck(squirtle)
+print(pikachu.name)
+print(squirtle.name)
+print(charizard.name)
 
-# numbers = list()
-# for i in range(5)
-#     numbers.append(random.append(1,100))
-
-numbers = [random.randint(1,100) for i in range(10)]
-print(numbers)
-try:
-    pick = int(input(f"Input the number(0~{len(numbers)-1}) : "))
-    print(numbers[pick])
-    print(5/2)
-    raise OopsException("Oops!") # 클래스를 활용한 강제 예외 발생
-
-except IndexError as err: # as + 변수 이름 하면 시스템에서 만든 문구를 출력
-    print(f"out of range: Wrong index number {err}")
-except ValueError:
-    print("Input only number")
-
-except Exception: #이러한 것은 보험용이기에 맨 밑에 넣어야함
-    print("error occurs")
-else :
-    print("terminate program")
-# except 옆에 밑에 창에 뜨는 시스템 에러 이름을 적어주면 됨.
