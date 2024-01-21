@@ -123,7 +123,7 @@ class Squirtle(Pokemon,W_attackMixin):
         return t
 
 # advance evolutions class
-class Charmander_2(Charmander, F_attackMixin):
+class Mega_Charizard(Charmander, F_attackMixin):
     def mana_point(self):
         mp = 250
         return mp
@@ -131,7 +131,7 @@ class Charmander_2(Charmander, F_attackMixin):
     def heart_point(self):
         hp = 150
         return hp
-class Bulbasaur_2(Bulbasaur, Plant_attackMixin):
+class Ivysaur(Bulbasaur, Plant_attackMixin):
     def mana_point(self):
         mp = 100
         return mp
@@ -139,7 +139,7 @@ class Bulbasaur_2(Bulbasaur, Plant_attackMixin):
     def heart_point(self):
         hp = 100
         return hp
-class Gyarados_2(Gyarados, W_attackMixin):
+class Mega_Gyarados(Gyarados, W_attackMixin):
     def mana_point(self):
         mp = 120
         return mp
@@ -147,7 +147,7 @@ class Gyarados_2(Gyarados, W_attackMixin):
     def heart_point(self):
         hp = 300
         return hp
-class Pikachu_2(Pikachu, E_attackMixin):
+class Raichu(Pikachu, E_attackMixin):
     def mana_point(self):
         mp = 200
         return mp
@@ -155,7 +155,7 @@ class Pikachu_2(Pikachu, E_attackMixin):
     def heart_point(self):
         hp = 150
         return hp
-class Squirtle_2(Squirtle, W_attackMixin):
+class Wartortle(Squirtle, W_attackMixin):
     def mana_point(self):
         mp = 150
         return mp
@@ -173,11 +173,11 @@ g1 = Gyarados("Gyarados")
 s1 = Squirtle("Squirtle")
 
 # advance evolutions class naming partition
-p2 = Pikachu_2("Pikachu2")
-c2 = Charmander_2("Charmander2")
-b2 = Bulbasaur_2("Bulbasaur2")
-g2 = Gyarados_2("Gyarados2")
-s2 = Squirtle_2("Squirtle2")
+p2 = Raichu("Raichu")
+c2 = Mega_Charizard("Mega_Charizard")
+b2 = Ivysaur("Ivysaur")
+g2 = Mega_Gyarados("Mega_Gyarados")
+s2 = Wartortle("Wartortle")
 
 def bea(numbers): # basic evolution attributes dictionary
     p1a = {"Name": p1.name, 'Hp': p1.heart_point(), 'Mp' : p1.mana_point(), 'Type': p1.type()}
