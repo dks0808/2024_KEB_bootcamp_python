@@ -5,9 +5,11 @@ import random
 class W_attackMixin:
     def water(self):
         # 공격력 20 사용 시 마나 -20
+        print("물속성 공격을 합니다. ")
         deal = 20
-        mana = -20
-        return f"{self.__name}이(가) 적에게 물 속성 공격!"
+        mana = 20
+        aea['Mp']=
+
 class F_attackMixin:
     def flame(self):
         a = 20
@@ -203,12 +205,18 @@ b2 = Ivysaur("Ivysaur")
 g2 = Mega_Gyarados("Mega_Gyarados")
 s2 = Wartortle("Wartortle")
 
+p1a = {"Name": p1.name, 'Hp': p1.heart_point(), 'Mp' : p1.mana_point(), 'Type': p1.type()}
+c1a = {"Name": c1.name, 'Hp': c1.heart_point(), 'Mp' : c1.mana_point(), 'Type': c1.type()}
+b1a = {"Name": b1.name, 'Hp': b1.heart_point(), 'Mp' : b1.mana_point(), 'Type': b1.type()}
+g1a = {"Name": g1.name, 'Hp': g1.heart_point(), 'Mp' : g1.mana_point(), 'Type': g1.type()}
+s1a = {"Name": s1.name, 'Hp': s1.heart_point(), 'Mp' : s1.mana_point(), 'Type': s1.type()}
+
+p2a = {"Name": p2.name, 'Hp': p2.heart_point(), 'Mp' : p2.mana_point(), 'Type': p2.type()}
+c2a = {"Name": c2.name, 'Hp': c2.heart_point(), 'Mp' : c2.mana_point(), 'Type': c2.type()}
+b2a = {"Name": b2.name, 'Hp': b2.heart_point(), 'Mp' : b2.mana_point(), 'Type': b2.type()}
+g2a = {"Name": g2.name, 'Hp': g2.heart_point(), 'Mp' : g2.mana_point(), 'Type': g2.type()}
+s2a = {"Name": s2.name, 'Hp': s2.heart_point(), 'Mp' : s2.mana_point(), 'Type': s2.type()}
 def bea(number): # basic evolution attributes dictionary
-    p1a = {"Name": p1.name, 'Hp': p1.heart_point(), 'Mp' : p1.mana_point(), 'Type': p1.type()}
-    c1a = {"Name": c1.name, 'Hp': c1.heart_point(), 'Mp' : c1.mana_point(), 'Type': c1.type()}
-    b1a = {"Name": b1.name, 'Hp': b1.heart_point(), 'Mp' : b1.mana_point(), 'Type': b1.type()}
-    g1a = {"Name": g1.name, 'Hp': g1.heart_point(), 'Mp' : g1.mana_point(), 'Type': g1.type()}
-    s1a = {"Name": s1.name, 'Hp': s1.heart_point(), 'Mp' : s1.mana_point(), 'Type': s1.type()}
     if number == 1:
         return p1a
     elif number == 2:
@@ -221,11 +229,6 @@ def bea(number): # basic evolution attributes dictionary
         return s1a
 
 def aea(number): # advance evolution attributes dictionary
-    p2a = {"Name": p2.name, 'Hp': p2.heart_point(), 'Mp' : p2.mana_point(), 'Type': p2.type()}
-    c2a = {"Name": c2.name, 'Hp': c2.heart_point(), 'Mp' : c2.mana_point(), 'Type': c2.type()}
-    b2a = {"Name": b2.name, 'Hp': b2.heart_point(), 'Mp' : b2.mana_point(), 'Type': b2.type()}
-    g2a = {"Name": g2.name, 'Hp': g2.heart_point(), 'Mp' : g2.mana_point(), 'Type': g2.type()}
-    s2a = {"Name": s2.name, 'Hp': s2.heart_point(), 'Mp' : s2.mana_point(), 'Type': s2.type()}
     if number == 1:
         return p2a
     elif number == 2:
