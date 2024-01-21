@@ -4,20 +4,44 @@ import random
 # attack class control this for dick
 class W_attackMixin:
     def water(self):
-        return f"{self.__name}이(가) 하늘을 훨훨 날아갑니다~"
+        # 공격력 20 사용 시 마나 -20
+        deal = 20
+        mana = -20
+        return f"{self.__name}이(가) 적에게 물 속성 공격!"
 class F_attackMixin:
     def flame(self):
+        a = 20
+        # 공격력 20 사용 시 마나 -20
         return f"{self.__name}이(가) 수영을 합니다."
 class E_attackMixin:
     def electric(self):
+        # 공격력 20 사용 시 마나 -20
         return f"{self.__name}이(가) 수영을 합니다."
+
 class Plant_attackMixin: # never function in Pikachu
     def plant(self):
+        # 공격력 20 사용 시 마나 -20
         return f"{self.__name}이(가) 수영을 합니다."
-class FlyMixin:
-    def Fly(self):
-        return f'fly'
 
+class Monster:
+    def __init__(self, name):
+        self.__name = name
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):
+        self.__name = new_name
+
+    def heart_point(self):
+        hp = 50
+        return hp
+
+    def attack(self):
+        # 공격력 10, 마나 X
+        print('defalt attack')
 
 # basic evolution attribute class with Top Class
 class Pokemon:
@@ -46,7 +70,6 @@ class Pokemon:
     def evolution_Lv(self):
         ev = 1
         return ev
-
 
 
 # basic evolution level class
@@ -171,6 +194,7 @@ c1 = Charmander("Charmander")
 b1 = Bulbasaur("Bulbasaur")
 g1 = Gyarados("Gyarados")
 s1 = Squirtle("Squirtle")
+m1 = Monster("wild monster")
 
 # advance evolutions class naming partition
 p2 = Raichu("Raichu")
@@ -196,7 +220,6 @@ def bea(number): # basic evolution attributes dictionary
     elif number == 5:
         return s1a
 
-
 def aea(number): # advance evolution attributes dictionary
     p2a = {"Name": p2.name, 'Hp': p2.heart_point(), 'Mp' : p2.mana_point(), 'Type': p2.type()}
     c2a = {"Name": c2.name, 'Hp': c2.heart_point(), 'Mp' : c2.mana_point(), 'Type': c2.type()}
@@ -214,23 +237,6 @@ def aea(number): # advance evolution attributes dictionary
     elif number == 5:
         return s2a
 
-
-# basic evolution attributes ver list
-# p1a = [p1.name, p1.heart_point(), p1.mana_point(), p1.type()]
-# c1a = [c1.name, c1.heart_point(), c1.mana_point(), c1.type()]
-# b1a = [b1.name, b1.heart_point(), b1.mana_point(), b1.type()]
-# g1a = [g1.name, g1.heart_point(), g1.mana_point(), g1.type()]
-# s1a = [s1.name, s1.heart_point(), s1.mana_point(), s1.type()]
-
-# # advance evolution attributes ver list
-# p2a = [p2.name, p2.heart_point(), p2.mana_point(), p2.type()]
-# c2a = [c2.name, c2.heart_point(), c2.mana_point(), c2.type()]
-# b2a = [b2.name, b2.heart_point(), b2.mana_point(), b2.type()]
-# g2a = [g2.name, g2.heart_point(), g2.mana_point(), g2.type()]
-# s2a = [s2.name, s2.heart_point(), s2.mana_point(), s2.type()]
-
-start = input('If You wanna play Pokemon game, Press "p". \n press any keys if you wanna quit this. : ')
-operate(start)
 # operating function
 def operate(key):
     """
@@ -238,12 +244,11 @@ def operate(key):
     :param key: str
     :return: str
     """
-    if key == 'p' or 'P':
-        menu = input(f"Choose your own pokemon. \n 1) Pikachu, 2) Charmander, 3) Bulbasaur, 4)Gyarados, 5)Squirtle, 6) Quit 'press 6 or q' : ")
+    if key == "p":
+        menu = input(f"Choose your own pokemon. \n 1) Pikachu, 2) Charmander, 3) Bulbasaur, 4)Gyarados, 5)Squirtle : ")
         select(menu)
-
     else:
-        print("good bye")
+        print('Terminate this program')
 
 # Pokemon select
 def select(c):
@@ -255,35 +260,48 @@ def select(c):
     options = '12345q'
     while c in options:
         if c =='1':
-            a = f'You got the {p1.name}'
+            a = f'You got the {p1.name}! '
             b = f'{p1.name} is {bea(1)}'
             print(a,b)
             break
 
         elif c =='2':
-            a = f'You got the {c1.name}'
+            a = f'You got the {c1.name}! '
             b = f'{c1.name} is {bea(2)}'
             print(a,b)
             break
 
         elif c =='3':
-            a = f'You got the {b1.name}'
+            a = f'You got the {b1.name}! '
             b = f'{b1.name} is {bea(3)}'
             print(a,b)
             break
 
         elif c =='4':
-            a = f'You got the {g1.name}'
+            a = f'You got the {g1.name}! '
             b = f'{g1.name} is {bea(4)}'
             print(a,b)
             break
 
         elif c =='5':
-            a = f'You got the {s1.name}'
+            a = f'You got the {s1.name}! '
             b = f'{s1.name} is {bea(5)}'
             print(a,b)
             break
 
-        else:
-            print(f'')
+    else:
+        print(f'Wrong value Please try again.')
 
+def fight(s):
+    if s == 's':
+        print(f"Your pokemon's info : {aea(start)} \n Be careful!")
+    else :
+        print("We don't like chicken!")
+
+
+start = input('If You wanna play Pokemon game, Press "p". \n press any keys if you wanna quit this. : ')
+operate(start)
+
+print(f"here the {Monster.name}!")
+f = input("press 's' You wanna Fight")
+fight(f)
