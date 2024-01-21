@@ -179,39 +179,39 @@ b2 = Ivysaur("Ivysaur")
 g2 = Mega_Gyarados("Mega_Gyarados")
 s2 = Wartortle("Wartortle")
 
-def bea(numbers): # basic evolution attributes dictionary
+def bea(number): # basic evolution attributes dictionary
     p1a = {"Name": p1.name, 'Hp': p1.heart_point(), 'Mp' : p1.mana_point(), 'Type': p1.type()}
     c1a = {"Name": c1.name, 'Hp': c1.heart_point(), 'Mp' : c1.mana_point(), 'Type': c1.type()}
     b1a = {"Name": b1.name, 'Hp': b1.heart_point(), 'Mp' : b1.mana_point(), 'Type': b1.type()}
     g1a = {"Name": g1.name, 'Hp': g1.heart_point(), 'Mp' : g1.mana_point(), 'Type': g1.type()}
     s1a = {"Name": s1.name, 'Hp': s1.heart_point(), 'Mp' : s1.mana_point(), 'Type': s1.type()}
-    if numbers == '1':
+    if number == 1:
         return p1a
-    elif numbers == '2':
+    elif number == 2:
         return c1a
-    elif numbers == '3':
+    elif number == 3:
         return b1a
-    elif numbers == '4':
+    elif number == 4:
         return g1a
-    elif numbers == '5':
+    elif number == 5:
         return s1a
 
 
-def aea(numbers): # advance evolution attributes dictionary
+def aea(number): # advance evolution attributes dictionary
     p2a = {"Name": p2.name, 'Hp': p2.heart_point(), 'Mp' : p2.mana_point(), 'Type': p2.type()}
     c2a = {"Name": c2.name, 'Hp': c2.heart_point(), 'Mp' : c2.mana_point(), 'Type': c2.type()}
     b2a = {"Name": b2.name, 'Hp': b2.heart_point(), 'Mp' : b2.mana_point(), 'Type': b2.type()}
     g2a = {"Name": g2.name, 'Hp': g2.heart_point(), 'Mp' : g2.mana_point(), 'Type': g2.type()}
     s2a = {"Name": s2.name, 'Hp': s2.heart_point(), 'Mp' : s2.mana_point(), 'Type': s2.type()}
-    if numbers == '1':
+    if number == 1:
         return p2a
-    elif numbers == '2':
+    elif number == 2:
         return c2a
-    elif numbers == '3':
+    elif number == 3:
         return b2a
-    elif numbers == '4':
+    elif number == 4:
         return g2a
-    elif numbers == '5':
+    elif number == 5:
         return s2a
 
 
@@ -229,15 +229,61 @@ def aea(numbers): # advance evolution attributes dictionary
 # g2a = [g2.name, g2.heart_point(), g2.mana_point(), g2.type()]
 # s2a = [s2.name, s2.heart_point(), s2.mana_point(), s2.type()]
 
+start = input('If You wanna play Pokemon game, Press "p". \n press any keys if you wanna quit this. : ')
+operate(start)
+# operating function
+def operate(key):
+    """
+    function of program operating. If this function be called, it will call select function.
+    :param key: str
+    :return: str
+    """
+    if key == 'p' or 'P':
+        menu = input(f"Choose your own pokemon. \n 1) Pikachu, 2) Charmander, 3) Bulbasaur, 4)Gyarados, 5)Squirtle, 6) Quit 'press 6 or q' : ")
+        select(menu)
 
-
-menu = input(f"Choose your own pokemon. \n 1) Pikachu, 2) Charmander, 3) Bulbasaur, 4)Gyarados, 5)Squirtle, 6) Quit 'press 6 or q' : ")
-options = '12345q'
-while menu in options:
-    if menu =='1':
-        print('You got the pikachu!')
-
-        print(f'Pikachu is {p1a}')
     else:
-        print("Quit this program.")
-        break
+        print("good bye")
+
+# Pokemon select
+def select(c):
+    """
+    function of selecting character
+    :param c:
+    :return:
+    """
+    options = '12345q'
+    while c in options:
+        if c =='1':
+            a = f'You got the {p1.name}'
+            b = f'{p1.name} is {bea(1)}'
+            print(a,b)
+            break
+
+        elif c =='2':
+            a = f'You got the {c1.name}'
+            b = f'{c1.name} is {bea(2)}'
+            print(a,b)
+            break
+
+        elif c =='3':
+            a = f'You got the {b1.name}'
+            b = f'{b1.name} is {bea(3)}'
+            print(a,b)
+            break
+
+        elif c =='4':
+            a = f'You got the {g1.name}'
+            b = f'{g1.name} is {bea(4)}'
+            print(a,b)
+            break
+
+        elif c =='5':
+            a = f'You got the {s1.name}'
+            b = f'{s1.name} is {bea(5)}'
+            print(a,b)
+            break
+
+        else:
+            print(f'')
+
