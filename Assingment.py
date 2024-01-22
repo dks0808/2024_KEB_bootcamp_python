@@ -8,7 +8,7 @@ class W_attackMixin:
         print("물속성 공격을 합니다. ")
         deal = 20
         mana = 20
-        aea['Mp']=
+
 
 class F_attackMixin:
     def flame(self):
@@ -72,6 +72,10 @@ class Pokemon:
     def evolution_Lv(self):
         ev = 1
         return ev
+    def __str__(self):
+        return self.__name + "입니다."
+    def __add__(self, target):
+        return self.__name + "+" + target.__name
 
 
 # basic evolution level class
@@ -302,9 +306,12 @@ def fight(s):
         print("We don't like chicken!")
 
 
-start = input('If You wanna play Pokemon game, Press "p". \n press any keys if you wanna quit this. : ')
-operate(start)
-
-print(f"here the {Monster.name}!")
-f = input("press 's' You wanna Fight")
-fight(f)
+# start = input('If You wanna play Pokemon game, Press "p". \n press any keys if you wanna quit this. : ')
+# operate(start)
+#
+# print(f"here the {Monster.name}!")
+# f = input("press 's' You wanna Fight")
+# fight(f)
+#
+#
+print(g1+c1)
