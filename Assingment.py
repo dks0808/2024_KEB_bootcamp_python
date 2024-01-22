@@ -26,8 +26,10 @@ class Plant_attackMixin: # never function in Pikachu
         return f"{self.__name}이(가) 수영을 합니다."
 
 class Monster:
-    def __init__(self, name):
+    def __init__(self, name, hp, type):
         self.__name = name
+        self.hp = hp
+        self.type = type
 
     @property
     def name(self):
@@ -47,9 +49,10 @@ class Monster:
 
 # basic evolution attribute class with Top Class
 class Pokemon:
-    def __init__(self, name, hp):
+    def __init__(self, name, hp, type):
         self.__name = name
         self.hp = hp
+        self.type = type
 
     @property
     def name(self):
@@ -62,10 +65,6 @@ class Pokemon:
     def mana_point(self):
         mp = 100
         return mp
-
-    def heart_point(self):
-        hp = 100
-        return hp
 
     def attack(self):
         print('defalt attack')
@@ -81,76 +80,20 @@ class Pokemon:
 
 # basic evolution level class
 class Charmander(Pokemon,F_attackMixin):
-    def mana_point(self):
-        mp = 100
-        return mp
+    pass
 
-    def heart_point(self):
-        hp = 100
-        return hp
 
-    def attack(self):
-        print('defalt attack')
 
-    def type(self):
-        t = 'Fire'
-        return t
 class Bulbasaur(Pokemon,Plant_attackMixin):
-    def mana_point(self):
-        mp = 100
-        return mp
+    pass
 
-    def heart_point(self):
-        hp = 100
-        return hp
-
-    def attack(self):
-        print('defalt attack')
-    def type(self):
-        t = 'Plant'
-        return t
 class Gyarados(Pokemon,W_attackMixin):
-    def mana_point(self):
-        mp = 100
-        return mp
-
-    def heart_point(self):
-        hp = 100
-        return hp
-
-    def attack(self):
-        print('defalt attack')
-    def type(self):
-        t = 'Fly','Water'
-        return t
+    pass
 class Pikachu(Pokemon,E_attackMixin):
-    def mana_point(self):
-        mp = 100
-        return mp
-
-    def heart_point(self):
-        hp = 100
-        return hp
-
-    def attack(self):
-        print('defalt attack')
-    def type(self):
-        t = 'Electric'
-        return t
+    pass
 class Squirtle(Pokemon,W_attackMixin):
-    def mana_point(self):
-        mp = 100
-        return mp
+    pass
 
-    def heart_point(self):
-        hp = 100
-        return hp
-
-    def attack(self):
-        print('defalt attack')
-    def type(self):
-        t = 'Water'
-        return t
 
 # advance evolutions class
 class Mega_Charizard(Charmander, F_attackMixin):
@@ -196,12 +139,12 @@ class Wartortle(Squirtle, W_attackMixin):
 
 
 # basic evolution level class naming partition
-p1 = Pikachu("Pikachu", 100)
-c1 = Charmander("Charmander", 120)
-b1 = Bulbasaur("Bulbasaur",100)
-g1 = Gyarados("Gyarados", 100)
-s1 = Squirtle("Squirtle", 100)
-m1 = Monster("wild monster", 100)
+p1 = Pikachu("Pikachu", 100, 'Electric')
+c1 = Charmander("Charmander", 120, 'Flame')
+b1 = Bulbasaur("Bulbasaur",100,'plant')
+g1 = Gyarados("Gyarados", 100, 'Water')
+s1 = Squirtle("Squirtle", 100, 'Water')
+m1 = Monster("wild monster", 100, 'dump')
 
 # advance evolutions class naming partition
 p2 = Raichu("Raichu", 200)
@@ -210,40 +153,40 @@ b2 = Ivysaur("Ivysaur",200)
 g2 = Mega_Gyarados("Mega_Gyarados",200)
 s2 = Wartortle("Wartortle",200)
 
-p1a = {"Name": p1.name, 'Hp': p1.heart_point(), 'Mp' : p1.mana_point(), 'Type': p1.type()}
-c1a = {"Name": c1.name, 'Hp': c1.heart_point(), 'Mp' : c1.mana_point(), 'Type': c1.type()}
-b1a = {"Name": b1.name, 'Hp': b1.heart_point(), 'Mp' : b1.mana_point(), 'Type': b1.type()}
-g1a = {"Name": g1.name, 'Hp': g1.heart_point(), 'Mp' : g1.mana_point(), 'Type': g1.type()}
-s1a = {"Name": s1.name, 'Hp': s1.heart_point(), 'Mp' : s1.mana_point(), 'Type': s1.type()}
+# p1a = {"Name": p1.name, 'Hp': p1.heart_point(), 'Mp' : p1.mana_point(), 'Type': p1.type()}
+# c1a = {"Name": c1.name, 'Hp': c1.heart_point(), 'Mp' : c1.mana_point(), 'Type': c1.type()}
+# b1a = {"Name": b1.name, 'Hp': b1.heart_point(), 'Mp' : b1.mana_point(), 'Type': b1.type()}
+# g1a = {"Name": g1.name, 'Hp': g1.heart_point(), 'Mp' : g1.mana_point(), 'Type': g1.type()}
+# s1a = {"Name": s1.name, 'Hp': s1.heart_point(), 'Mp' : s1.mana_point(), 'Type': s1.type()}
+#
+# p2a = {"Name": p2.name, 'Hp': p2.heart_point(), 'Mp' : p2.mana_point(), 'Type': p2.type()}
+# c2a = {"Name": c2.name, 'Hp': c2.heart_point(), 'Mp' : c2.mana_point(), 'Type': c2.type()}
+# b2a = {"Name": b2.name, 'Hp': b2.heart_point(), 'Mp' : b2.mana_point(), 'Type': b2.type()}
+# g2a = {"Name": g2.name, 'Hp': g2.heart_point(), 'Mp' : g2.mana_point(), 'Type': g2.type()}
+# s2a = {"Name": s2.name, 'Hp': s2.heart_point(), 'Mp' : s2.mana_point(), 'Type': s2.type()}
+# def bea(number): # basic evolution attributes dictionary
+#     if number == 1:
+#         return p1a
+#     elif number == 2:
+#         return c1a
+#     elif number == 3:
+#         return b1a
+#     elif number == 4:
+#         return g1a
+#     elif number == 5:
+#         return s1a
 
-p2a = {"Name": p2.name, 'Hp': p2.heart_point(), 'Mp' : p2.mana_point(), 'Type': p2.type()}
-c2a = {"Name": c2.name, 'Hp': c2.heart_point(), 'Mp' : c2.mana_point(), 'Type': c2.type()}
-b2a = {"Name": b2.name, 'Hp': b2.heart_point(), 'Mp' : b2.mana_point(), 'Type': b2.type()}
-g2a = {"Name": g2.name, 'Hp': g2.heart_point(), 'Mp' : g2.mana_point(), 'Type': g2.type()}
-s2a = {"Name": s2.name, 'Hp': s2.heart_point(), 'Mp' : s2.mana_point(), 'Type': s2.type()}
-def bea(number): # basic evolution attributes dictionary
-    if number == 1:
-        return p1a
-    elif number == 2:
-        return c1a
-    elif number == 3:
-        return b1a
-    elif number == 4:
-        return g1a
-    elif number == 5:
-        return s1a
-
-def aea(number): # advance evolution attributes dictionary
-    if number == 1:
-        return p2a
-    elif number == 2:
-        return c2a
-    elif number == 3:
-        return b2a
-    elif number == 4:
-        return g2a
-    elif number == 5:
-        return s2a
+# def aea(number): # advance evolution attributes dictionary
+#     if number == 1:
+#         return p2a
+#     elif number == 2:
+#         return c2a
+#     elif number == 3:
+#         return b2a
+#     elif number == 4:
+#         return g2a
+#     elif number == 5:
+#         return s2a
 
 # operating function
 def operate(key):
@@ -269,7 +212,7 @@ def select(c):
     while c in options:
         if c =='1':
             a = f'You got the {p1.name}! '
-            b = f'{p1.name} is {bea(1)}'
+            b = f"{p1.type}: {p1.type}, HP: {p1.hp}"
             print(a,b)
             break
 
@@ -302,7 +245,7 @@ def select(c):
 
 def fight(s):
     if s == 's':
-        print(f"Your pokemon's info : {aea(start)} \n Be careful!")
+        print(f"Your pokemon's info Be careful!")
     else :
         print("We don't like chicken!")
 
