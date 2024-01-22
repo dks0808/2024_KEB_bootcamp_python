@@ -47,8 +47,9 @@ class Monster:
 
 # basic evolution attribute class with Top Class
 class Pokemon:
-    def __init__(self, name):
+    def __init__(self, name, hp):
         self.__name = name
+        self.hp = hp
 
     @property
     def name(self):
@@ -195,19 +196,19 @@ class Wartortle(Squirtle, W_attackMixin):
 
 
 # basic evolution level class naming partition
-p1 = Pikachu("Pikachu")
-c1 = Charmander("Charmander")
-b1 = Bulbasaur("Bulbasaur")
-g1 = Gyarados("Gyarados")
-s1 = Squirtle("Squirtle")
-m1 = Monster("wild monster")
+p1 = Pikachu("Pikachu", 100)
+c1 = Charmander("Charmander", 120)
+b1 = Bulbasaur("Bulbasaur",100)
+g1 = Gyarados("Gyarados", 100)
+s1 = Squirtle("Squirtle", 100)
+m1 = Monster("wild monster", 100)
 
 # advance evolutions class naming partition
-p2 = Raichu("Raichu")
-c2 = Mega_Charizard("Mega_Charizard")
-b2 = Ivysaur("Ivysaur")
-g2 = Mega_Gyarados("Mega_Gyarados")
-s2 = Wartortle("Wartortle")
+p2 = Raichu("Raichu", 200)
+c2 = Mega_Charizard("Mega_Charizard" ,200)
+b2 = Ivysaur("Ivysaur",200)
+g2 = Mega_Gyarados("Mega_Gyarados",200)
+s2 = Wartortle("Wartortle",200)
 
 p1a = {"Name": p1.name, 'Hp': p1.heart_point(), 'Mp' : p1.mana_point(), 'Type': p1.type()}
 c1a = {"Name": c1.name, 'Hp': c1.heart_point(), 'Mp' : c1.mana_point(), 'Type': c1.type()}
